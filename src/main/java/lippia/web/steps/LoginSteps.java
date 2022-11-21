@@ -68,6 +68,21 @@ public class LoginSteps extends PageSteps {
         HomeService.closeAds();
     }
 
+    @And("El cliente cierra sesion de su cuenta")
+    public void elClienteCierraSesionDeSuCuenta() {
+        LoginService.clickLogout();
     }
+
+    @And("El cliente presiona volver atras")
+    public void elClientePresionaVolverAtras() {
+        LoginService.comeBackJack();
+
+    }
+
+    @Then("El cliente no deberia estar logueado")
+    public void elClienteNoDeberiaEstarLogueado() {
+        LoginValidate.verificarLogoutBack();
+    }
+}
 
 

@@ -74,4 +74,19 @@ public class HomeSteps extends PageSteps {
     public void elClienteHaceClickEnElBotonParaContinuarElPago() {
         HomeService.clickContinuarPago();
     }
+
+    @And("El cliente accede al formulario para completar sus datos junto con los datos de facturacion y detalles de facturacion")
+    public void elClienteAccedeAlFormularioParaCompletarSusDatosJuntoConLosDatosDeFacturacionYDetallesDeFacturacion() {
+        HomeValidate.verificarDetallesForm();
+    }
+
+    @And("El cliente completa el formulario con sus datos '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)'")
+    public void elClienteCompletaElFormularioConSusDatosNombreApellidoNombreEmpresaEmailTelefonoPaisDireccionDptoLocalidadCuidadCodigoPostal(String nombre, String apellido, String nombre_empresa, String email, String telefono, String pais, String direccion, String depto, String localidad, String ciudad, String cPostal) {
+    HomeService.rellenarForm(nombre,apellido,nombre_empresa,email,telefono,pais,direccion,depto,localidad,ciudad,cPostal);
+    }
+
+    @And("El cliente selecciona el metodo de pago '(.*)'")
+    public void elClienteSeleccionaElMetodoDePagoMetodoDePago(String metodoPago) {
+        HomeService.seleccionarMetodoPago(metodoPago);
+    }
 }

@@ -3,6 +3,7 @@ package lippia.web.services;
 
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
+import com.crowdar.driver.DriverManager;
 import lippia.web.constants.LoginConstants;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
@@ -34,5 +35,12 @@ public class LoginService extends ActionManager {
     }
 
 
+    public static void clickLogout() {
+        click(LoginConstants.LOGOUT);
+    }
 
+    public static void comeBackJack() {
+        DriverManager.getDriverInstance().getWrappedDriver().navigate().back();
+
+    }
 }

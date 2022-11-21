@@ -23,4 +23,8 @@ public class LoginValidate {
     public static void noLoginPassword412(){
         softAssert.assertTrue(isVisible(LoginConstants.EM_USERNAME412));
     }
+
+    public static void verificarLogoutBack() {
+        softAssert.assertTrue(isVisible(LoginConstants.LOGIN));
+    }
 }

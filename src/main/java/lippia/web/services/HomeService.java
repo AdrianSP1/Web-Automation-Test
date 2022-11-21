@@ -3,8 +3,11 @@ import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.HomeConstants;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.sql.ClientInfoStatus;
 
 
 public class HomeService extends ActionManager {
@@ -52,6 +55,50 @@ public class HomeService extends ActionManager {
 
     public static void clickContinuarPago() {
         click(HomeConstants.CONTINUE_PAYMENTS);
+    }
+
+    public static void rellenarForm(String nombre, String apellido, String nombre_empresa, String email, String telefono, String pais, String direccion, String depto, String localidad, String ciudad, String cPostal) {
+    waitVisibility(HomeConstants.REQUEST_DETAILS);
+    setInput(HomeConstants.NAME,nombre);
+    setInput(HomeConstants.SURNAME,apellido);
+    setInput(HomeConstants.COMPANY_NAME,nombre_empresa);
+    setInput(HomeConstants.EMAIL,email);
+    setInput(HomeConstants.PHONE,telefono);
+
+    setInput(HomeConstants.COUNTRY,pais);
+
+    setInput(HomeConstants.ADRESS,direccion);
+    setInput(HomeConstants.DPTO,depto);
+    setInput(HomeConstants.LOCATION,localidad);
+
+    setInput(HomeConstants.STATE,ciudad);
+
+    setInput(HomeConstants.POSTAL_CODE,cPostal);
+    }
+
+    public static void seleccionarMetodoPago(String metodoPago) {
+        switch (metodoPago) {
+            case "Transferencia Bancaria":
+                click(HomeConstants.BANK_TRANSFER);
+                break;
+            case "Cheque":
+                click(HomeConstants.CHEQUE_PAYMENT);
+                break;
+            case "Contra Reembolso":
+                click(HomeConstants.COD_PAYMENT);
+                break;
+            default:
+                click(HomeConstants.PAYPAL_PAYMENT);
+                break;
+        }
+
+
+
+
+
+
+
+
     }
 }
 

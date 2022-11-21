@@ -1,6 +1,7 @@
 package lippia.web.constants;
 
 import com.crowdar.core.PropertyManager;
+import org.openqa.selenium.WebElement;
 
 public class LoginConstants {
 
@@ -24,7 +25,5 @@ public class LoginConstants {
     public static final String PROPERTI_PASSWORD = PropertyManager.getProperty("password");
 
 
-
-
-
+    public static final String LOGOUT = "xpath://a[text()='Logout']";
 }

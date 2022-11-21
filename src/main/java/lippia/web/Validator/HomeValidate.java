@@ -50,4 +50,16 @@ public class HomeValidate {
         softAssert.assertTrue(Total> SubTotal, "El Subtotal es mayor que el Total");
 
     }
+
+    public static void verificarDetallesForm() {
+        waitVisibility(HomeConstants.ADDITIONAL_INFO);
+        softAssert.assertTrue(isVisible(HomeConstants.ADDITIONAL_INFO));
+
+        waitVisibility(HomeConstants.REQUEST_DETAILS);
+        softAssert.assertTrue(isVisible(HomeConstants.REQUEST_DETAILS));
+
+        waitVisibility(HomeConstants.ORDER);
+        softAssert.assertTrue(isVisible(HomeConstants.ORDER));
+
+    }
 }

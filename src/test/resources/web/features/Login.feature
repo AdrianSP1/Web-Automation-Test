@@ -12,7 +12,7 @@ Feature: Pruebas de login de la web en la seccion(MY ACCOUNT- LOGIN)
     Then El cliente accede a su cuenta
       Examples: 
       |           username                 |    password      |
-      |pepelopez125q@gmail.com|pepelopez125q|
+      |adriansp1@test.com           |524625643045|
 
     @LoginError
     Scenario Outline: El cliente intenta acceder a su cuenta con datos de logueo incorrectos
@@ -22,6 +22,18 @@ Feature: Pruebas de login de la web en la seccion(MY ACCOUNT- LOGIN)
       Then Se muestra mensaje de error
       Examples:
       | username                        | password        |
-      |                                         |                         |
-      | adrianspdag1@test.com |  fdhdf344g     |
-      |      adriansp1@test.com  |                        |
+      |         524625643045      |  adriansp1@test.com  |
+
+
+      @LogoutBack
+     Scenario Outline:El cliente accede a su cuenta ,se deslogea y vuelve al home
+        When El cliente ingresa su username<username>
+        And El cliente ingresa su password<password>
+        And El Cliente hace click en el boton de Login
+        And El cliente cierra sesion de su cuenta
+        And  El cliente presiona volver atras
+        Then  El cliente no deberia estar logueado
+        Examples:
+          |           username                 |    password      |
+          |adriansp1@test.com           |524625643045|
+
