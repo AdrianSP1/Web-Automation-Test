@@ -2,7 +2,7 @@ Feature:  Pruebas sobre el registro de cuenta en la pagina my-account
   Background:
     Given El cliente se encuentra en la pagina Automation Practice
     And El cliente hace click en el boton My Account de la barra de navegacion
-    @RegistroExitoso
+      @RegistroExitoso
    Scenario Outline: El Cliente se registra de manera exitosa
       When El Cliente ingresa un mail <mail>
       And El Cliente ingresa un password<password>
@@ -13,7 +13,7 @@ Feature:  Pruebas sobre el registro de cuenta en la pagina my-account
      |            mail        |    password      |
      |     @test.com     |  Pepegomez2015     |
 
-    @RegistroIncorrecto
+      @RegistroIncorrecto
     Scenario Outline:El Cliente intenta registrarse con mail no valido
     When El cliente ingresa un mail no valido '<mailInvalid>'
     And El Cliente ingresa un password<password>

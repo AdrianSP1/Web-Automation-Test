@@ -12,23 +12,23 @@ public class LoginService extends ActionManager {
         navigateTo(PropertyManager.getProperty("web.base.url"));
     }
     public static void clickMyAccount(){
-        click(LoginConstants.BTN_MYACCOUNT_XPATH);
+        click(LoginConstants.MYACCOUNT);
     }
 
     public static void inputUser(String text){
-        setInput(LoginConstants.INPUT_USERNAME_ID, text);
+        setInput(LoginConstants.INPUT_USERNAME, text);
     }
     public static void inputPassword(String text){
-        setInput(LoginConstants.INPUT_PASSWORD_ID, text);
+        setInput(LoginConstants.INPUT_PASSWORD, text);
     }
     public static void clickLogin(){
-        click(LoginConstants.BTN_LOGIN_XPATH);
+        click(LoginConstants.LOGIN);
     }
 
 
     public static void HappyLogin(){
-        inputUser(LoginConstants.HAPPY_USER);
-        inputPassword(LoginConstants.HAPPY_PASSWORD);
+        inputUser(LoginConstants.PROPERTI_USER);
+        inputPassword(LoginConstants.PROPERTI_PASSWORD);
         clickLogin();
 
     }

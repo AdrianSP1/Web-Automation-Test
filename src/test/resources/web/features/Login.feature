@@ -5,11 +5,14 @@ Feature: Pruebas de login de la web en la seccion(MY ACCOUNT- LOGIN)
       And El cliente hace click en el boton My Account de la barra de navegacion
 
     @Login
-   Scenario: El cliente ingresa a su cuenta(HappyPath)
-    When El cliente ingresa su username
-    And El cliente ingresa su password
+   Scenario Outline: El cliente ingresa a su cuenta
+    When El cliente ingresa su username<username>
+    And El cliente ingresa su password<password>
     And El Cliente hace click en el boton de Login
     Then El cliente accede a su cuenta
+      Examples: 
+      |           username                 |    password      |
+      |pepelopez125q@gmail.com|pepelopez125q|
 
     @LoginError
     Scenario Outline: El cliente intenta acceder a su cuenta con datos de logueo incorrectos

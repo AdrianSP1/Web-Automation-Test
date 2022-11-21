@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lippia.web.Validator.LoginValidate;
+import lippia.web.services.HomeService;
 import lippia.web.services.LoginService;
 
 public class LoginSteps extends PageSteps {
@@ -64,6 +65,7 @@ public class LoginSteps extends PageSteps {
     @Then("El cliente accede a su cuenta")
     public void ElClienteAccedeASuCuenta() {
         LoginService.HappyLogin();
+        HomeService.closeAds();
     }
 
     }
