@@ -14,10 +14,12 @@ Feature:  Pruebas sobre el registro de cuenta en la pagina my-account
      |     @test.com     |  Pepegomez2015     |
 
       @RegistroIncorrecto
-    Scenario Outline:El Cliente intenta registrarse con mail no valido
-    When El cliente ingresa un mail no valido '<mailInvalid>'
+    Scenario Outline:El Cliente intenta registrarse de formas incorrecta
+    When El cliente ingresa un mail no valido '<mail>'
     And El Cliente ingresa un password<password>
     Then El Cliente hace click en el boton Register para registrarse
     Examples:
-      |      mailInvalid       | password |
-      |         @.com           | Pepesde123  |
+      |                mail              |        password |
+      |               @.com           |   Pepesde123  |
+      | adriansp1@test.com  |                          |
+      |                                     |                          |

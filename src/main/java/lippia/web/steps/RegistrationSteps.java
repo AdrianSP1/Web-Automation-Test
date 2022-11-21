@@ -35,8 +35,8 @@ public class RegistrationSteps extends PageSteps {
 
 
     @When("El cliente ingresa un mail no valido {string}")
-    public void elClienteIngresaUnMailNoValidoMailInvalid(String mailInvalid) {
-        RegistrationService.randomEmail(mailInvalid);
+    public void elClienteIngresaUnMailNoValidoMailInvalid(String mail) {
+        RegistrationService.randomEmail(mail);
     }
     
 }

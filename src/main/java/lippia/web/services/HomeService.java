@@ -3,11 +3,9 @@ import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.HomeConstants;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.sql.ClientInfoStatus;
 
 
 public class HomeService extends ActionManager {
