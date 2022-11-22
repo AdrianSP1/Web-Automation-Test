@@ -10,6 +10,7 @@ Feature: Prueba del menu de opciones de la pagina MY-ACCOUNT-
       And  El cliente selecciona el boton Acount Details
       Then El cliente visualiza en la pagina la opcion de cambiar su password
 
+
     @WebCompleto @Logout @Account
     Scenario:El cliente cierra sesion en su cuenta de manera exitosa
       When El cliente hace click en el boton My Account de la barra de navegacion

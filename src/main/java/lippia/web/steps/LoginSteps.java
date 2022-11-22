@@ -20,6 +20,7 @@ public class LoginSteps extends PageSteps {
     @When("^El cliente hace click en el boton My Account de la barra de navegacion$")
        public void ElClienteHaceClickEnElBotonMyAccount() {
         LoginService.clickMyAccount();
+        HomeService.closeAds();
     }
 
     @And("^El cliente ingresa su username(.*)$")
@@ -35,6 +36,7 @@ public class LoginSteps extends PageSteps {
     @And ("^El Cliente hace click en el boton de Login$")
     public void ElClienteHaceClickEnElBotonLogin(){
         LoginService.clickLogin();
+        HomeService.closeAds();
     }
 
     @Then( "Se verifica el ingreso correcto")
@@ -73,11 +75,13 @@ public class LoginSteps extends PageSteps {
     @And("El cliente cierra sesion de su cuenta")
     public void elClienteCierraSesionDeSuCuenta() {
         LoginService.clickLogout();
+        HomeService.closeAds();
     }
 
     @And("El cliente presiona volver atras")
     public void elClientePresionaVolverAtras() {
         LoginService.comeBackJack();
+        HomeService.closeAds();
 
     }
 

@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lippia.web.Validator.RegistrationValidate;
+import lippia.web.services.HomeService;
 import lippia.web.services.RegistrationService;
 
 import javax.imageio.spi.RegisterableService;
@@ -26,6 +27,7 @@ public class RegistrationSteps extends PageSteps {
     @And("El cliente  hace click en el boton Register")
     public void elClienteHaceClickEnElBotonRegister() {
         RegistrationService.clickRegistrar();
+        HomeService.closeAds();
     }
 
     @Then("Se muestra mensaje de error por password vacia")

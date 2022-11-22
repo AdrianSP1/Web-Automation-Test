@@ -52,6 +52,7 @@ public class HomeSteps extends PageSteps {
     @And("El cliente agrega el libro al carrito")
     public void elClienteAgregaElLibroAlCarrito() {
         HomeService.clickAgregarCarrito();
+        HomeService.closeAds();
     }
 
 
@@ -74,6 +75,7 @@ public class HomeSteps extends PageSteps {
     @And("El cliente hace click en el boton para continuar el pago")
     public void elClienteHaceClickEnElBotonParaContinuarElPago() {
         HomeService.clickContinuarPago();
+        HomeService.closeAds();
     }
 
     @And("El cliente accede al formulario para completar sus datos junto con los datos de facturacion y detalles de facturacion")
@@ -95,6 +97,7 @@ public class HomeSteps extends PageSteps {
     @And("El cliente hace click en el boton para Pagar")
     public void elClienteHaceClickEnElBotonParaPagar() {
         HomeService.clickPayout();
+        HomeService.closeAds();
     }
 
     @Then("El cliente completa su pedido")
