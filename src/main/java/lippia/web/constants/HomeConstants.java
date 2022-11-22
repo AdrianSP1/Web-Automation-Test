@@ -41,10 +41,8 @@ public class HomeConstants {
 
     public static final String POSTAL_CODE="xpath://input[@id='billing_postcode']";
 
-    public static final String BANK_TRANSFER="xpath://div/ul/li/input[@id='payment_method_bacs']";
-    public static final String CHEQUE_PAYMENT="xpath://div/ul/li/input[@id='payment_method_cheque']";
-    public static final String COD_PAYMENT="xpath://div/ul/li/input[@id='payment_method_cod']";
-    public static final String PAYPAL_PAYMENT="xpath://div/ul/li/input[@id='payment_method_ppec_paypal']";
+    public static final String APLY_CUPON = "xpath://input[@class='button']";
+
 
 
 
@@ -54,5 +52,10 @@ public class HomeConstants {
     public static final String AD_CLOSE_BUTTON_XPATH = "xpath://*[@id='dismiss-button']";
 
 
-
+    public static final String PLACE_ORDER ="xpath://input[@class='button alt']";
+    public static final String BUY_SUCCES ="xpath://p[text()='Thank you. Your order has been received.']";
+    public static final String BILLING="xpath://h3[text()='Billing Address']";
+    public static final String CUSTOMER ="xpath://h2[text()='Customer Details']";
+    public static final String ORDER_DETAILS ="xpath://h2[text()='Order Details']";
+    ;
 }

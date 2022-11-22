@@ -2,6 +2,7 @@ package lippia.web.steps;
 
 import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lippia.web.Validator.HomeValidate;
 import lippia.web.services.HomeService;
@@ -82,11 +83,22 @@ public class HomeSteps extends PageSteps {
 
     @And("El cliente completa el formulario con sus datos '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)'")
     public void elClienteCompletaElFormularioConSusDatosNombreApellidoNombreEmpresaEmailTelefonoPaisDireccionDptoLocalidadCuidadCodigoPostal(String nombre, String apellido, String nombre_empresa, String email, String telefono, String pais, String direccion, String depto, String localidad, String ciudad, String cPostal) {
-    HomeService.rellenarForm(nombre,apellido,nombre_empresa,email,telefono,pais,direccion,depto,localidad,ciudad,cPostal);
+        HomeService.emptyForm();
+        HomeService.rellenarForm(nombre,apellido,nombre_empresa,email,telefono,pais,direccion,depto,localidad,ciudad,cPostal);
     }
 
-    @And("El cliente selecciona el metodo de pago '(.*)'")
-    public void elClienteSeleccionaElMetodoDePagoMetodoDePago(String metodoPago) {
-        HomeService.seleccionarMetodoPago(metodoPago);
+    @Then("El cliente puede agregar un cupon de descuento")
+    public void elClientePuedeAgregarUnCuponDeDescuento() {
+        HomeValidate.verificarCupon();
+    }
+
+    @And("El cliente hace click en el boton para Pagar")
+    public void elClienteHaceClickEnElBotonParaPagar() {
+        HomeService.clickPayout();
+    }
+
+    @Then("El cliente completa su pedido")
+    public void elClienteCompletaSuPedido() {
+        HomeValidate.verificarFactura();
     }
 }

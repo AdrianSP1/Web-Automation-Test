@@ -3,9 +3,12 @@ import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.HomeConstants;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
 
 
 public class HomeService extends ActionManager {
@@ -17,7 +20,7 @@ public class HomeService extends ActionManager {
         click(HomeConstants.HOME);
     }
 
-    public static void clickNextArrival(){
+    public static void clickNextArrival() {
         click(HomeConstants.NEXT_ARRIVAL);
     }
 
@@ -56,44 +59,64 @@ public class HomeService extends ActionManager {
     }
 
     public static void rellenarForm(String nombre, String apellido, String nombre_empresa, String email, String telefono, String pais, String direccion, String depto, String localidad, String ciudad, String cPostal) {
-    waitVisibility(HomeConstants.REQUEST_DETAILS);
-    setInput(HomeConstants.NAME,nombre);
-    setInput(HomeConstants.SURNAME,apellido);
-    setInput(HomeConstants.COMPANY_NAME,nombre_empresa);
-    setInput(HomeConstants.EMAIL,email);
-    setInput(HomeConstants.PHONE,telefono);
+        waitVisibility(HomeConstants.REQUEST_DETAILS);
 
-    setInput(HomeConstants.COUNTRY,pais);
+        setInput(HomeConstants.NAME, nombre);
 
-    setInput(HomeConstants.ADRESS,direccion);
-    setInput(HomeConstants.DPTO,depto);
-    setInput(HomeConstants.LOCATION,localidad);
+        setInput(HomeConstants.SURNAME, apellido);
 
-    setInput(HomeConstants.STATE,ciudad);
+        setInput(HomeConstants.COMPANY_NAME, nombre_empresa);
 
-    setInput(HomeConstants.POSTAL_CODE,cPostal);
+        setInput(HomeConstants.EMAIL, email);
+
+        setInput(HomeConstants.PHONE, telefono);
+
+        setInput(HomeConstants.COUNTRY, pais);
+
+        setInput(HomeConstants.ADRESS, direccion);
+
+        setInput(HomeConstants.DPTO, depto);
+
+        setInput(HomeConstants.LOCATION, localidad);
+
+
+        setInput(HomeConstants.STATE, ciudad);
+
+
+        setInput(HomeConstants.POSTAL_CODE, cPostal);
     }
 
-    public static void seleccionarMetodoPago(String metodoPago) {
-        switch (metodoPago) {
-            case "Transferencia Bancaria":
-                click(HomeConstants.BANK_TRANSFER);
-                break;
-            case "Cheque":
-                click(HomeConstants.CHEQUE_PAYMENT);
-                break;
-            case "Contra Reembolso":
-                click(HomeConstants.COD_PAYMENT);
-                break;
-            default:
-                click(HomeConstants.PAYPAL_PAYMENT);
-                break;
-        }
+    public static void emptyForm(){
+        WebElement name= getElement(HomeConstants.NAME);
+        WebElement surname= getElement(HomeConstants.SURNAME);
+        WebElement companyName= getElement(HomeConstants.COMPANY_NAME);
+        WebElement email= getElement(HomeConstants.EMAIL);
+        WebElement phone= getElement(HomeConstants.PHONE);
+        WebElement country= getElement(HomeConstants.COUNTRY);
+        WebElement adress= getElement(HomeConstants.ADRESS);
+        WebElement dpto= getElement(HomeConstants.DPTO);
+        WebElement location= getElement(HomeConstants.LOCATION);
+        WebElement state= getElement(HomeConstants.STATE);
+        WebElement pcode= getElement(HomeConstants.POSTAL_CODE);
 
+        name.clear();
+        surname.clear();
+        companyName.clear();
+        email.clear();
+        phone.clear();
+        country.clear();
+        adress.clear();
+        dpto.clear();
+        location.clear();
+        state.clear();
+        pcode.clear();
+    }
 
-
-
-
+    public static void clickPayout() {
+        WebDriver driver= DriverManager.getDriverInstance().getWrappedDriver();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement placeorder= driver.findElement(By.xpath("//*[@class='button alt']"));
+        js.executeScript("arguments[0].click()", placeorder);
 
 
 

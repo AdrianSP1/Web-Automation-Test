@@ -1,7 +1,12 @@
 package lippia.web.Validator;
 
 import com.crowdar.core.actions.WebActionManager;
+import com.crowdar.driver.DriverManager;
 import lippia.web.constants.HomeConstants;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
 import static com.crowdar.core.actions.ActionManager.*;
@@ -60,6 +65,27 @@ public class HomeValidate {
 
         waitVisibility(HomeConstants.ORDER);
         softAssert.assertTrue(isVisible(HomeConstants.ORDER));
+
+    }
+
+    public static void verificarCupon() {
+        WebDriver driver= DriverManager.getDriverInstance().getWrappedDriver();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement element = driver.findElement(By.xpath("//*[@class='showcoupon'][text()='Click here to enter your code']"));
+        js.executeScript("arguments[0].click()", element);
+        WebActionManager.waitVisibility(HomeConstants.APLY_CUPON);
+
+
+    }
+
+    public static void verificarFactura() {
+
+        waitVisibility(HomeConstants.BUY_SUCCES);
+        softAssert.assertTrue(isVisible(HomeConstants.BUY_SUCCES));
+        softAssert.assertTrue(isVisible(HomeConstants.BILLING));
+        softAssert.assertTrue(isVisible(HomeConstants.CUSTOMER));
+        softAssert.assertTrue(isVisible(HomeConstants.ORDER_DETAILS));
+
 
     }
 }
