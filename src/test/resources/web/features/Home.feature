@@ -1,11 +1,11 @@
-Feature: Test pagina MyAccount
+Feature: Test pagina Home
   Background:
     Given El cliente se encuentra en la pagina Automation Practice
     And El cliente hace click en el boton My Account de la barra de navegacion
     And El cliente accede a su cuenta
 
-  @CompraExitosa
-  Scenario Outline: El cliente realiza una compre exitosa
+  @WebCompleto  @Home
+  Scenario Outline: El cliente realiza una compra exitosa
     When El cliente hace click en el boton Shop
     And  El cliente hace click en el boton Home
     And El cliente prueba que la pagina contenga 3 libros

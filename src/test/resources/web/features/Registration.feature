@@ -1,25 +1,24 @@
-Feature:  Pruebas sobre el registro de cuenta en la pagina my-account
+Feature: Pruebas sobre el registro
   Background:
     Given El cliente se encuentra en la pagina Automation Practice
     And El cliente hace click en el boton My Account de la barra de navegacion
-      @RegistroExitoso
-   Scenario Outline: El Cliente se registra de manera exitosa
-      When El Cliente ingresa un mail <mail>
-      And El Cliente ingresa un password<password>
-      And El Cliente hace click en el boton Register para registrarse
-      Then El Cliente verifica que su registro fue exitoso
+
+    Scenario Outline:El cliente prueba resgistrarse con password vacia
+     When El cliente ingresa un username <username>
+     And El cliente ingresa un password <password>
+     And El cliente  hace click en el boton Register
+     Then Se muestra mensaje de error por password vacia
 
      Examples:
-     |            mail        |    password      |
-     |     @test.com     |  Pepegomez2015     |
+     |username                 |password|
+     |adriansp1@test.com|                 |
 
-      @RegistroIncorrecto
-    Scenario Outline:El Cliente intenta registrarse de formas incorrecta
-    When El cliente ingresa un mail no valido '<mail>'
-    And El Cliente ingresa un password<password>
-    Then El Cliente hace click en el boton Register para registrarse
-    Examples:
-      |                mail              |        password |
-      |               @.com           |   Pepesde123  |
-      | adriansp1@test.com  |                          |
-      |                                     |                          |
+        @RR
+        Scenario Outline: El cliente prueba registrarse con campos vacios
+        When El cliente ingresa un username<username>
+        And El cliente ingresa un password <password>
+        And El cliente  hace click en el boton Register
+        Then  Se muestra mensaje de error en la pagino por email vacio
+        Examples:
+          |username                 |password|
+          |                                 |                 |

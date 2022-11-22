@@ -8,17 +8,12 @@ import static com.crowdar.core.actions.ActionManager.isVisible;
 public class RegistrationValidate {
     static SoftAssert softAssert = new SoftAssert();
 
-    public static void verificarPassNull() {
-        softAssert.assertTrue(isVisible(RegistrationConstants.ERROR_PASSWORD));
-
-
+    public static void verificarEmptyPass() {
+        softAssert.assertTrue(isVisible(RegistrationConstants.INVALID_PASS));
     }
 
-    public static void verificarEmailInvalido() {
-        softAssert.assertTrue(isVisible(RegistrationConstants.ERROR_EMAIL));
-    }
-    public static void verificarRegistro(){
-        softAssert.assertTrue(isVisible(RegistrationConstants.BTN_DASHBOARD));
+    public static void verificarEmptyMail() {
+        softAssert.assertTrue(isVisible(RegistrationConstants.INVALID_EMAIL));
     }
 }
 

@@ -1,7 +1,6 @@
 package lippia.web.constants;
 
 import com.crowdar.core.PropertyManager;
-import org.openqa.selenium.WebElement;
 
 public class LoginConstants {
 
@@ -11,10 +10,10 @@ public class LoginConstants {
 
 
     //Mensajes de error
-    public static final String EM_USERNAME404 ="xpath://li[text()=' A user could not be found with this email address.']";
-    public static final String EM_PASSWORD412 ="xpath://li[text()=' Password is required.']";
-    public static final String EM_USERNAME412 ="xpath://li[text()=' Username is required.']";
-    public static final String EM_PASSWORD409 ="xpath://div/div/ul/li[text()=' is incorrect. ']";
+    public static final String NOT_REGIST ="xpath://li[text()=' is not registered on this site. If you are unsure of your username, try your email address instead.']";
+    public static final String PASSWORD_EMPTY ="xpath://li[text()=' Password is required.']";
+    public static final String USERNAME_EMPTY ="xpath://li[text()=' Username is required.']";
+    public static final String PASSWORD_FAIL ="xpath://div/div/ul/li[text()=' is incorrect. ']";
 
     //INPUT
     public static final String INPUT_USERNAME ="id:username";
