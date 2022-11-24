@@ -51,8 +51,6 @@ public class HomeConstants {
     public static final String AD_IFRAME2_XPATH = "xpath://*[@id='ad_iframe']";
     public static final String AD_CLOSE_BUTTON_XPATH = "xpath://*[@id='dismiss-button']";
 
-
-    public static final String PLACE_ORDER ="xpath://input[@class='button alt']";
     public static final String BUY_SUCCES ="xpath://p[text()='Thank you. Your order has been received.']";
     public static final String BILLING="xpath://h3[text()='Billing Address']";
     public static final String CUSTOMER ="xpath://h2[text()='Customer Details']";

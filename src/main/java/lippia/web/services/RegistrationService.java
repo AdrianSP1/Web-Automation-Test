@@ -25,19 +25,8 @@ public class RegistrationService extends ActionManager {
     }
 
 
-
-    public static void cleanRegistration() {
-        WebElement mail= getElement(RegistrationConstants.USERNAME);
-        WebElement pass = getElement(RegistrationConstants.PASS);
-        mail.clear();
-        pass.clear();
-
     }
 
-
-
-
-}
 
 
 
